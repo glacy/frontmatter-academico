@@ -3,7 +3,7 @@ title: "Diseño semántico de documentos académicos"
 
 authors:
   - name: Gerardo Lacy Mora
-    affiliation: Instituto Tecnológico de Costa Rica
+    affiliation: astro.md
     roles:
       - Writing – original draft
       - Conceptualization
@@ -61,9 +61,7 @@ Al finalizar el curso, la persona participante será capaz de:
 ## Estructura del repositorio
 
     frontmatter-curso/
-    ├── _config.yml            # Configuración global (Jupyter Book)
-    ├── _toc.yml               # Estructura de navegación (Jupyter Book)
-    ├── myst.yml               # Configuración moderna (MyST CLI)
+    ├── myst.yml               # Configuración central (MyST)
     ├── environment.yml        # Definición oficial del entorno Conda
     ├── verify_env.sh          # Verificación obligatoria del entorno
     ├── README.md              # Documento de referencia técnica y pedagógica
@@ -90,6 +88,7 @@ Al finalizar el curso, la persona participante será capaz de:
 ## Uso del repositorio
 
 - `examples/` contiene ejemplos funcionales de frontmatter para distintos contextos académicos.
+  - `legacy/` contiene archivos de configuración antiguos (`_toc.yml`, `_config.yml`) por referencia histórica.
 - `exercises/` incluye actividades guiadas asociadas a cada sesión.
 - `project/` se utiliza para desarrollar el producto final evaluable.
 

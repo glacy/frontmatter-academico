@@ -34,31 +34,39 @@ El punto de mayor confusión actual es la definición de la estructura.
 
 | Característica | Jupyter Book (`_toc.yml`) | MyST CLI (`myst.yml`) |
 |----------------|---------------------------|-----------------------|
-| **Agrupación** | `parts`                   | No usa clave `parts`, infiere nivel por anidación |
-| **Título de Grupo** | `caption: "Titulo"` | `title: "Titulo"` |
-| **Contenido**  | `chapters: [...]`         | `children: [...]` |
-| **Archivo raíz** | `root: index`           | Se define en `project.toc` o implícito |
+| **Estructura** | Bipartita: `parts` vs `chapters` | Recursiva: `toc` contiene lista de nodos |
+| **Grupos**     | `parts: [{caption: "..."}]` | `{title: "...", children: [...]}` |
+| **Archivos**   | `chapters: [{file: "..."}]` | `{file: "..."}` |
+| **Raíz**       | `root: index`               | `project.toc` (primer archivo o explícito) |
 
 ### Ejemplo de Migración
 
-**En Jupyter Book (`_toc.yml`):**
+**En Jupyter Book legacy (`_toc.yml`):**
 ```yaml
-- caption: "Fundamentos"
-  chapters:
-    - file: intro.md
+parts:
+  - caption: "Fundamentos"
+    chapters:
+       - file: intro
 ```
 
-**En MyST (`myst.yml`):**
+**En MyST moderno (`myst.yml`):**
 ```yaml
-- title: "Fundamentos"
-  children:
-    - file: intro.md
+project:
+  toc:
+    - title: "Fundamentos"
+      children:
+        - file: intro.md
 ```
 
-## ¿Cuál usar?
+## ¿Por qué MyST?
 
-- **Si usas `jb build`:** Debes usar `_toc.yml` y la sintaxis clásica.
-- **Si usas `myst start`:** Debes usar `myst.yml`. MyST intenta leer `_toc.yml` para compatibilidad, pero a menudo falla con estructuras complejas (parts/captions), por lo que se recomienda tener una configuración nativa en `myst.yml`.
+Aunque MyST soporta leer archivos antiguos (`_config.yml` y `_toc.yml`) para importar proyectos existentes, la recomendación actual es centralizar todo en **`myst.yml`**.
+
+**Razones:**
+
+1.  **Fuente Única de Verdad**: `myst.yml` unifica metadatos del proyecto (`project`), estructura (`toc`) y configuración visual (`site`).
+2.  **Estructura Flexible**: La lista `toc` permite anidar niveles arbitrariamente, mientras que `parts` de JB era una estructura rígida de dos niveles.
+3.  **Explícito**: MyST requiere extensiones de archivo explícitas (`.md`), reduciendo ambigüedades.
 
 ## Hacia el futuro
 

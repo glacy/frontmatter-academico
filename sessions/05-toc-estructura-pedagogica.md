@@ -1,34 +1,34 @@
 ---
-title: "Estructura pedagógica con _toc.yml"
+title: "Estructura pedagógica con myst.yml"
 subject: "Sesión 5"
 session:
   number: 5
   type: lecture
   duration: "1.5 horas"
 learning_objectives:
-  - "Comprender el rol de _toc.yml como estructura pedagógica explícita."
-  - "Declarar estructuras curriculares mediante `_toc.yml`"
+  - "Comprender el rol de `myst.yml` como estructura pedagógica explícita."
+  - "Declarar estructuras curriculares mediante el campo `toc`"
   - "Diseñar progresiones didácticas navegables"
 keywords:
   - estructura
   - pedagogía
   - navegación
-  - _toc.yml
+  - myst.yml
 ---
 
 
 En sistemas tradicionales, la tabla de contenidos es principalmente decorativa.
-En Jupyter Book, `_toc.yml` cumple una función mucho más profunda:
+En el ecosistema MyST, **`myst.yml`** cumple una función mucho más profunda:
 
 Define la estructura cognitiva y pedagógica del curso.
 
 No es solo un índice, sino una declaración explícita de secuencia didáctica, jerarquía conceptual y progresión evaluable.
 
-## ¿Qué es realmente `_toc.yml`?
+## ¿Qué es realmente la sección `toc`?
 
 ### Rol técnico
 
-Desde el punto de vista técnico, `_toc.yml`:
+Desde el punto de vista técnico, la llave `toc` en `myst.yml`:
 
 - indica qué archivos se construyen;
 - define el orden de navegación;
@@ -38,7 +38,7 @@ Pero esta visión es insuficiente para contextos educativos.
 
 ### Rol pedagógico
 
-Desde el punto de vista académico, `_toc.yml`:
+Desde el punto de vista académico, la estructura `toc`:
 
 - hace explícito el diseño curricular;
 - comunica la progresión de dificultad;
@@ -65,7 +65,7 @@ Cada nivel responde a una función cognitiva distinta:
 
 ### Jerarquía como narrativa
 
-El orden de `_toc.yml` cuenta una historia:
+El orden en `myst.yml` cuenta una historia:
 
 - qué se aprende primero;
 - qué depende de qué;
@@ -77,57 +77,55 @@ Una mala jerarquía produce:
 - redundancia,
 - sobrecarga cognitiva.
 
-### Jerarquía de agrupación: Parts, Chapters y Sections
+### Estructura de árbol: Parts, Chapters y Sections
 
-Para implementar esta narrativa, `_toc.yml` ofrece tres niveles de agrupación que deben usarse con intención pedagógica:|
+Para implementar esta narrativa, MyST usa una estructura recursiva basada en `file`, `title` y `children`:
 
-#### Parts (bloques temáticos)
+#### 1. Grupos (Parts) / Nodos con `title`
+Se definen mediante una llave `title` y una lista de `children`.
+- **Equivalencia técnica:** `title: "Nombre del Grupo"` + `children: [...]`
+- **Uso pedagógico:** Marcar cambios de "Unidad" o "Módulo".
 
-Agrupan múltiples sesiones bajo una temática mayor. 
-- **Uso pedagógico:** Marcar cambios de "Unidad" o "Módulo". Ayudan a que el estudiante no vea el curso como una lista interminable de archivos, sino como hitos logrables.
-- **Ejemplo:** "Fundamentos", "Caso de Estudio", "Evaluación".
-
-#### Chapters (capítulos / sesiones)
-
-Son los archivos individuales (`.md` o `.ipynb`) referenciados en el `toc`.
+#### 2. Archivos (Chapters) / Nodos con `file`
+Se definen mediante la llave `file` apuntando a un documento Markdown.
+- **Equivalencia técnica:** `file: ruta/al/archivo.md`
 - **Uso pedagógico:** Representan la "unidad atómica" de aprendizaje (ej. una clase de 1.5 horas).
-- **Carga Cognitiva:** Si un capítulo es demasiado largo, el estudiante pierde el foco. Si es muy corto, la navegación se vuelve tediosa.
 
-#### Sections (secciones)
-
+#### 3. Secciones internas
 Son los subtítulos dentro de un archivo (`##`, `###`).
-- **Uso pedagógico:** Estructuran el contenido *dentro* de la sesión.
-- **Diferencia clave:** Si un tema requiere su propia navegación o evaluación independiente, debería promoverse a *Chapter*, no quedarse como *Section*.
+MyST genera automáticamente la navegación interna para estas secciones. Si un subtítulo requiere aparecer explícitamente en el nivel superior del TOC, debe promoverse a archivo independiente.
 
-### Ejemplo concreto de `_toc.yml` pedagógico
+### Ejemplo concreto de `myst.yml` pedagógico
 
 A continuación, un ejemplo alineado con este curso:
 
 ```yaml
-format: jb-book
-root: index
+version: 1
+project:
+  toc:
+    - file: index.md
+    
+    - title: "Fundamentos"
+      children:
+        - file: sessions/01-introduccion-frontmatter.md
+        - file: sessions/02-frontmatter-academico.md
 
-parts:
-  - caption: "Fundamentos"
-    chapters:
-      - file: sessions/01-introduccion-frontmatter
-      - file: sessions/02-frontmatter-academico
+    - title: "Diseño semántico"
+      children:
+        - file: sessions/03-diseno-semantico-metadatos.md
+        - file: sessions/04-herencia-frontmatter.md
 
-  - caption: "Diseño semántico"
-    chapters:
-      - file: sessions/03-diseno-semantico-metadatos
-      - file: sessions/04-herencia-frontmatter
-
-  - caption: "Integración y evaluación"
-    chapters:
-      - file: sessions/05-toc-estructura-pedagogica
-      - file: sessions/06-proyecto-integrador
-
+    - title: "Integración y evaluación"
+      children:
+        - file: sessions/05-toc-estructura-pedagogica.md
+        - file: sessions/06-proyecto-integrador.md
 ```
 
-Lectura pedagógica del ejemplo
+**Nota:** Anteriormente se utilizaba un archivo separado llamado `_toc.yml`. Aunque MyST aún lo soporta por compatibilidad, la práctica moderna es centralizar todo en `myst.yml`.
 
-Este `_toc.yml` comunica explícitamente que:
+#### Lectura pedagógica del ejemplo
+
+Este bloque `toc` comunica explícitamente que:
 
 - el curso progresa de fundamentos a diseño;
 - la semántica precede a la implementación;
@@ -135,9 +133,9 @@ Este `_toc.yml` comunica explícitamente que:
 
 No es una decisión técnica, es una postura didáctica.
 
-### Relación entre `_toc.yml` y evaluación
+### Relación entre estructura y evaluación
 
-Cuando `_toc.yml` está bien diseñado:
+Cuando `myst.yml` está bien diseñado:
 
 - cada sesión tiene un rol claro;
 - los productos parciales preparan el proyecto final;
@@ -149,9 +147,9 @@ Esto facilita:
 - seguimiento del aprendizaje;
 - retroalimentación formativa.
 
-Transparencia académica
+#### Transparencia académica
 
-Un `_toc.yml` claro permite que:
+Una estructura clara permite que:
 
 - estudiantes comprendan el recorrido completo;
 - evaluadores externos entiendan la lógica del curso;
@@ -175,4 +173,4 @@ Esto es especialmente importante en entornos universitarios.
 
 > La navegación no es neutral: enseña tanto como el contenido.
 
-En la Sesión 6 se integrarán todos los elementos en un proyecto final evaluable, donde frontmatter, _config.yml y `_toc.yml` funcionen como un sistema coherente.
+En la Sesión 6 se integrarán todos los elementos en un proyecto final evaluable, donde el frontmatter y la configuración centralizada en `myst.yml` funcionen como un sistema coherente.

@@ -12,7 +12,7 @@ learning_objectives:
 keywords:
   - arquitectura
   - metadatos
-  - _toc.yml
+  - myst.yml
   - diseño
   - validación
 ---
@@ -35,9 +35,9 @@ Aquí se evalúa pensamiento estructural, no memorización.
 
 Diseñar la **arquitectura documental** de un mini-curso o módulo académico que demuestre:
 
-- una estructura pedagógica sólida declarada en `_toc.yml`;
-- coherencia semántica en los metadatos (frontmatter);
-- un sistema de configuración global (`_config.yml`) alineado con el contenido.
+- una estructura pedagógica sólida declarada en la sección `toc` de `myst.yml`;
+- coherencia semántica en los metadatos globales (`project` en `myst.yml`);
+- alineación entre la configuración del sitio (`site`) y el contenido.
 
 > **Nota:** No se requiere la compilación final del sitio web (HTML). El entregable es la estructura fuente válida y lógicamente consistente.
 
@@ -45,8 +45,10 @@ Diseñar la **arquitectura documental** de un mini-curso o módulo académico qu
 
 El proyecto debe incluir una estructura de directorios funcional con:
 
-- **Archivo global `_config.yml`**: Que defina los metadatos académicos del curso (título, autor, licencia).
-- **Archivo de estructura `_toc.yml`**: Que refleje una intención pedagógica clara (no solo una lista de archivos).
+- **Archivo único `myst.yml`**: Que defina:
+  - Metadatos del proyecto (`project`).
+  - Tabla de contenidos pedagógica (`toc`).
+  - Configuración básica del sitio (`site`).
 - **Contenido (mínimo 3 documentos)**:
   - Archivos `.md` o `.ipynb`.
   - Cada uno con frontmatter completo y herencia lógica (si aplica).
@@ -62,15 +64,15 @@ Se espera que el sistema de metadatos:
 - **Consistencia**: Use los mismos nombres de variables para conceptos iguales (ej. no mezclar `author` con `autor` arbitrariamente).
 - **Vocabularios controlados**: Si define categorías (ej. `type: lecture`), estas deben respetarse en todos los archivos.
 
-#### 2. Coherencia pedagógica (`_toc.yml`)
+#### 2. Coherencia pedagógica (`myst.yml`)
 
 La tabla de contenidos debe mostrar una narrativa:
 
 - ¿El orden de los archivos tiene sentido didáctico?
 - ¿Los títulos y secciones en el `toc` reflejan una progresión?
-- Uso correcto de `parts`, `chapters` y `sections` para agrupar contenido.
+- Uso correcto de la estructura jerárquica (`title`, `children`, `file`) para agrupar contenido.
 
-#### 3. Configuración global (`_config.yml`)
+#### 3. Configuración global (`myst.yml`)
 
 - Definición correcta de metadatos a nivel de libro.
 - Ausencia de configuración innecesaria o "basura" generada automáticamente.
@@ -79,23 +81,23 @@ La tabla de contenidos debe mostrar una narrativa:
 
 El estudiante debe entregar un sistema que, teóricamente, **podría** ser compilado sin errores, pero la evaluación se centrará en:
 
-- **Auditoría estructural**: Revisión de que los archivos referenciados en `_toc.yml` existen.
+- **Auditoría estructural**: Revisión de que los archivos referenciados en el `toc` de `myst.yml` existen.
 - **Auditoría semántica**: Revisión de que los metadatos permiten responder preguntas sobre el curso (ej. "¿Cuántas horas dura el módulo?", "¿Cuáles son los objetivos de aprendizaje?").
 
 ### Entregables
 
-1. **Carpeta del proyecto**: Conteniendo todos los archivos fuente (`.yml`, `.md`).
+1. **Carpeta del proyecto**: Conteniendo todos los archivos fuente (`myst.yml`, `.md`).
 2. **Documento de diseño (racional)**:
    - Un breve archivo (`README.md` o similar) que explique las decisiones tomadas.
-   - Justificación de por qué se eligió esa estructura en el `_toc`.
+   - Justificación de por qué se eligió esa estructura en el `toc`.
    - Explicación del sistema de metadatos elegido.
 
 ### Rúbrica de evaluación (resumen)
 
 | Criterio | Peso | Descripción |
 |----------|------|-------------|
-| **Integridad estructural** | 40% | `_toc.yml` válido, archivos existentes, `_config.yml` correcto. |
-| **Diseño semántico** | 40% | Frontmatter consistente, uso de vocabularios controlados, sin redundancia. |
+| **Integridad estructural** | 40% | `myst.yml` válido, archivos y rutas existentes. |
+| **Diseño semántico** | 40% | Frontmatter consistente, uso de vocabularios controlados (`project` vs local). |
 | **Racionalidad** | 20% | Justificación clara de las decisiones de diseño en el documento explicativo. |
 
 ### Actividad en sesión
@@ -103,7 +105,7 @@ El estudiante debe entregar un sistema que, teóricamente, **podría** ser compi
 Durante la sesión se realizará una **auditoría cruzada**:
 
 1. Intercambio de repositorios/carpetas entre pares.
-2. Análisis de la estructura ajena: ¿Se entiende el curso solo viendo el `_toc.yml` y los metadatos?
+2. Análisis de la estructura ajena: ¿Se entiende el curso solo viendo el `myst.yml` y los metadatos?
 3. Retroalimentación sobre la claridad de la "arquitectura" propuesta.
 
 ### Proyección

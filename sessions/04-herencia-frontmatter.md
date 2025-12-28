@@ -17,7 +17,7 @@ keywords:
   - configuración
   - Jupyter Book
   - MyST
-  - _config.yml
+  - myst.yml
 ---
 
 
@@ -86,19 +86,31 @@ No describe un documento específico, sino:
 - su identidad académica,
 - sus reglas semánticas.
 
-En Jupyter Book, este rol suele cumplirse mediante:
+En el ecosistema moderno de MyST, este rol se cumple mediante el archivo **`myst.yml`**.
 
-- `_config.yml`,
-- convenciones explícitas del proyecto.
+**`myst.yml`** centraliza la identidad del proyecto bajo la llave `project`:
+
+```yaml
+project:
+  title: "Curso de Diseño Semántico"
+  authors:
+    - name: Universidad Ejemplo
+  keywords:
+    - educación
+    - metadatos
+  license: CC-BY-4.0
+```
+
+Cualquier documento dentro del proyecto hereda implícitamente este contexto.
 
 ---
 
 ## Beneficios académicos
 
-Un frontmatter base bien diseñado permite:
+Un frontmatter base en `myst.yml` permite:
 
-- coherencia institucional;
-- evaluación homogénea;
+- coherencia institucional automática;
+- gestión centralizada de autoría y licencias;
 - reutilización del curso en otros contextos;
 - migración futura a otros sistemas.
 
@@ -146,27 +158,24 @@ No debe:
 
 ## Herencia en Jupyter Book y MyST
 
-**Jupyter Book como sistema jerárquico**
+**Del libro a la jerarquía MyST**
 
-Jupyter Book organiza el contenido en niveles:
+MyST organiza el contenido en una estructura de árbol definida en `myst.yml` (sección `toc`).
 
-- libro completo,
-- partes,
-- capítulos,
-- secciones.
+- Proyecto
+  - Grupo (Part)
+    - Archivo (Chapter)
+      - Sección
 
-Cada nivel:
+Cada nivel transmite contexto a los niveles inferiores.
 
-- puede definir metadatos,
-- transmite contexto a los niveles inferiores.
-
-Aunque la herencia no es automática en todos los casos, el diseño semántico sí lo es.
+Aunque la herencia no siempre es automática para todos los campos (depende de la herramienta de construcción), el diseño semántico asume que la información fluye de arriba hacia abajo.
 
 ---
 
 ## Buenas prácticas
 
-- definir metadatos globales en `_config.yml`;
+- definir metadatos globales en `myst.yml` (bajo `project`);
 - usar frontmatter mínimo y claro en cada archivo;
 - documentar explícitamente qué campos son heredados;
 - evitar duplicar información institucional.
