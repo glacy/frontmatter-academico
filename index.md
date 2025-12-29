@@ -57,6 +57,15 @@ Al finalizar el curso, la persona participante será capaz de:
 
 ---
 
+## Público objetivo
+
+- Docentes universitarios  
+- Estudiantes de posgrado  
+- Investigadores y personal académico  
+- Equipos de innovación educativa  
+
+---
+
 ## Estructura del repositorio
 
     frontmatter-curso/
@@ -117,14 +126,6 @@ La validación pedagógica, edición final, verificación de fuentes y responsab
 
 ---
 
-## Público objetivo
-
-- Docentes universitarios  
-- Estudiantes de posgrado  
-- Investigadores y personal académico  
-- Equipos de innovación educativa  
-
----
 
 ## Observación final
 
