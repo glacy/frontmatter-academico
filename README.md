@@ -63,7 +63,7 @@ Al finalizar el curso, la persona participante será capaz de:
     ├── myst.yml               # Configuración central (MyST)
     ├── environment.yml        # Definición oficial del entorno Conda
     ├── verify_env.sh          # Verificación obligatoria del entorno
-    ├── index.md               # Documento de referencia técnica y pedagógica (root)
+    ├── README.md              # Documento de referencia técnica y pedagógica (root)
     ├── sessions_table.md      # Tabla de sesiones y resultados de aprendizaje
     ├── sessions/              # Sesiones del curso
     │   ├── 01-introduccion-frontmatter.md

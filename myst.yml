@@ -9,7 +9,7 @@ project:
     Atribución 4.0 Internacional (CC BY 4.0).
   github: glacy/frontmatter-curso
   toc:
-    - file: index.md
+    - file: README.md
     - title: "Fundamentos"
       children:
         - file: sessions/01-introduccion-frontmatter.md
