@@ -40,6 +40,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.x
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+      - name: Generate Sessions Table
+        run: python3 generate_sessions_table.sh
       - name: Install MyST
         run: npm install -g mystmd
       - name: Build HTML Assets

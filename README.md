@@ -106,6 +106,13 @@ Se incluyen scripts para verificar la integridad del entorno y el contenido:
   ```
   Analiza todos los archivos en `sessions/` para asegurar que cumplen con la estructura de metadatos requerida (título, objetivos, keywords, etc.).
 
+- **Generar tabla de sesiones:**
+  ```bash
+  # Linux / macOS / WSL
+  python3 generate_sessions_table.sh
+  ```
+  Escanea los archivos en `sessions/` y regenera automáticamente `sessions_table.md` con los títulos y objetivos de aprendizaje. **Nota:** Este paso se ejecuta automáticamente al desplegar el sitio vía GitHub Actions.
+
 
 ## Licencia
 
