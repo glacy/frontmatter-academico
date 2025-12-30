@@ -14,6 +14,6 @@
             ]
         }
     },
-    "updateContentCommand": "conda env create -f environment.yml || conda env update -f environment.yml --prune",
+    "updateContentCommand": "conda init && conda env create -f environment.yml || conda env update -f environment.yml --prune",
     "postCreateCommand": "echo 'conda activate frontmatter-academico' >> ~/.bashrc"
 }
