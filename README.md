@@ -27,6 +27,16 @@ La forma más sencilla de ejecutar este curso es utilizando **GitHub Codespaces*
 2. Espere a que el entorno se construya (instalará automáticamente todas las dependencias).
 3. Una vez lista la terminal, el entorno `frontmatter-academico` estará activo.
 
+### Buenas prácticas (Pre-commit)
+
+Si clonas el repositorio localmente, se recomienda instalar los hooks de git para validación automática:
+
+```bash
+# Una vez activado el entorno conda
+pre-commit install
+```
+Esto validará el frontmatter automáticamente al intentar hacer un commit.
+
 ## Estructura del proyecto
 
 ```text

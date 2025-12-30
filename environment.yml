@@ -11,6 +11,7 @@ dependencies:
   - quarto
   - pip
   - pyyaml
+  - pre-commit
   - pip:
       - mystmd
       - jupyter-book
