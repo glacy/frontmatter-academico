@@ -117,3 +117,9 @@ abstract: >
   en varias líneas para facilidad de lectura
   pero se renderiza como un solo párrafo.
 ```
+
+## Recursos adicionales
+
+Para profundizar en el uso de Frontmatter en entornos de desarrollo colaborativo:
+
+- **GitHub Docs**: Guía oficial sobre el uso de YAML frontmatter en la documentación de GitHub [@github_frontmatter].
