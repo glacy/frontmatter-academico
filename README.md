@@ -2,7 +2,10 @@
 
 [![deploy](https://github.com/glacy/frontmatter-academico/actions/workflows/deploy.yml/badge.svg)](https://github.com/glacy/frontmatter-academico/actions/workflows/deploy.yml)
 
+
 **Curso introductorio sobre frontmatter, metadatos y publicación reproducible.**
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/glacy/frontmatter-academico)
 
 🚀 **Sitio web oficial (Versión compilada):** [https://glacy.github.io/frontmatter-academico](https://glacy.github.io/frontmatter-academico)
 
@@ -16,6 +19,13 @@ El curso está construido con **MyST Markdown** y demuestra principios de:
 - **Estructura semántica:** Uso intensivo de frontmatter YAML.
 - **Reproducibilidad:** Entorno controlado y despliegue automatizado.
 - **Documentación como código:** CI/CD con GitHub Actions.
+
+## Ejecución en la nube (Recomendado)
+
+La forma más sencilla de ejecutar este curso es utilizando **GitHub Codespaces**.
+1. Haga clic en el botón "Open in GitHub Codespaces" de arriba.
+2. Espere a que el entorno se construya (instalará automáticamente todas las dependencias).
+3. Una vez lista la terminal, el entorno `frontmatter-academico` estará activo.
 
 ## Estructura del proyecto
 
