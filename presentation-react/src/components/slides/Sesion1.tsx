@@ -2,10 +2,11 @@ import SlideLayout from '../common/SlideLayout';
 import SlideHeader from '../common/SlideHeader';
 import IconCard from '../common/IconCard';
 
+
 // Slide 2: Sesión 1
 const Sesion1 = () => (
     <SlideLayout>
-        <SlideHeader title="Sesión 1" subtitle="Introducción al Frontmatter" />
+        <SlideHeader title="Sesión 1" subtitle="Introducción al frontmatter" />
 
         <div className="flex-grow flex flex-col lg:flex-row px-6 lg:px-16 py-8 lg:py-12 gap-8 lg:gap-12">
             <div className="w-full lg:w-1/2 flex flex-col justify-center gap-6 lg:gap-8">
@@ -30,16 +31,20 @@ const Sesion1 = () => (
             </div>
 
             <div className="w-full lg:w-1/2 flex flex-col justify-center gap-6">
-                <div className="grid grid-cols-1 gap-6">
+                <div className="grid grid-cols-2 gap-6">
                     <IconCard icon="description" title="Frontmatter" variant="outlined-info">
                         Metadatos estructurados en YAML al inicio del documento
                     </IconCard>
                     <IconCard icon="label" title="Metadatos" variant="outlined-info">
                         Datos sobre el documento, no el documento mismo
                     </IconCard>
+
+
                 </div>
             </div>
         </div>
+
+
     </SlideLayout>
 );
 

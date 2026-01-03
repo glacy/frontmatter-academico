@@ -1,5 +1,8 @@
 import { ReactNode } from 'react';
 
+/**
+ * Available visual variants for the IconCard.
+ */
 export type IconCardVariant =
     | 'info'
     | 'warning'
@@ -8,14 +11,26 @@ export type IconCardVariant =
     | 'outlined-clean'
     | 'clean';
 
+/**
+ * Props for the IconCard component.
+ */
 interface IconCardProps {
+    /** Material Icon name to display in the header. */
     icon?: string;
+    /** The title of the card. */
     title: ReactNode;
+    /** The content of the card. */
     children?: ReactNode;
+    /** The visual style variant of the card. */
     variant?: IconCardVariant;
+    /** Additional CSS classes. */
     className?: string;
 }
 
+/**
+ * A versatile card component with an icon, title, and various visual styles.
+ * Used for displaying structured content, lists, or highlighted information.
+ */
 const IconCard: React.FC<IconCardProps> = ({ icon, title, children, variant = 'info', className = '' }) => {
 
     // Helper to get classes based on variant

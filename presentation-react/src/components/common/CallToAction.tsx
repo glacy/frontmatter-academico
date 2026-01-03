@@ -1,11 +1,20 @@
 import { ReactNode } from 'react';
 
+/**
+ * Props for the CallToAction component.
+ */
 interface CallToActionProps {
+    /** The icon name (Material Icons) to display. */
     icon?: string;
+    /** The text content of the call to action. */
     text: ReactNode;
+    /** Additional CSS classes. */
     className?: string;
 }
 
+/**
+ * A prominent call-to-action component with an icon and text, usually placed at the bottom of a slide.
+ */
 const CallToAction: React.FC<CallToActionProps> = ({
     icon = "rocket_launch",
     text,

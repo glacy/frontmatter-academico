@@ -1,8 +1,14 @@
 import { ReactNode, useState } from 'react';
 
+/**
+ * Props for the CodeBlock component.
+ */
 interface CodeBlockProps {
+    /** The code content to display. */
     children?: ReactNode;
+    /** Additional CSS classes. */
     className?: string;
+    /** Optional text color override. */
     textColor?: string;
 }
 

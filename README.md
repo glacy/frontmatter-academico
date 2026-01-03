@@ -118,8 +118,10 @@ El proyecto incluye una presentación interactiva construida con **React, TypeSc
     - Navegación completa por teclado (Tab, Flechas, Enter).
     - Etiquetas ARIA y roles semánticos.
 - **Arquitectura de componentes**:
-    - Componentes reutilizables: `SlideLayout`, `IconCard`, `CodeBlock`, `CallToAction`.
+    - Componentes reutilizables: `SlideLayout`, `IconCard`, `CodeBlock`, `CallToAction`, `MathBlock` (KaTeX), `ImageBlock`.
     - Lógica de colores centralizada en `src/utils/colors.js`.
+    - **Documentación**: Todos los componentes comunes cuentan con documentación JSDoc completa.
+    - **Modularidad**: Las diapositivas se cargan dinámicamente desde `src/components/slides/`, facilitando el mantenimiento.
 
 ### Comandos de desarrollo
 ```bash
