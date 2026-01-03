@@ -148,7 +148,11 @@ src/
 │   └── common/             # Reusable UI Kit
 │       ├── SlideLayout.tsx # Standard page wrapper
 │       ├── SlideHeader.tsx # Title/Subtitle component
-│       └── IconCard.tsx    # Content blocks with variants
+│       ├── IconCard.tsx    # Content blocks with variants
+│       ├── CodeBlock.tsx   # Code snippets with copy button
+│       ├── CallToAction.tsx # Bottom banners
+│       ├── MathBlock.tsx   # LaTeX rendering (KaTeX)
+│       └── ImageBlock.tsx  # Optimized image container
 └── index.css               # Global styles and Tailwind directives
 ```
 
