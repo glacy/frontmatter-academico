@@ -129,9 +129,8 @@ High-impact banner usually placed at the bottom of a slide.
 
 ```tsx
 <CallToAction
-  text="Ready to start? Click here to begin."
-  icon="arrow_forward"
-/>
+            text="Aplica estos conceptos en tus proyectos académicos y comparte tus experiencias"
+        />
 ```
 ![CallToAction Component](./docs/images/call-to-action.png)
 
