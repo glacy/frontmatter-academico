@@ -1,7 +1,7 @@
 import SlideLayout from '../common/SlideLayout';
 import SlideHeader from '../common/SlideHeader';
 import IconCard from '../common/IconCard';
-import CodeBlock from '../common/CodeBlock';
+
 
 
 // Slide 2: Sesión 1

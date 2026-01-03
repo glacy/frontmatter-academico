@@ -33,7 +33,8 @@ const Cierre = () => (
                     <div className="space-y-4">
                         {[
                             { icon: 'language', t: 'Sitio web del curso', d: 'glacy.github.io/frontmatter-academico' },
-                            { icon: 'code', t: 'Repositorio de código', d: 'github.com/glacy/frontmatter-academico' },
+                            { icon: 'folder_open', t: 'Repositorio del curso', d: 'github.com/glacy/frontmatter-academico' },
+                            { icon: 'code', t: 'Plantilla de presentación (React)', d: 'github.com/glacy/frontmatter-academico/tree/main/presentation-react' },
                             { icon: 'menu_book', t: 'Documentación MyST', d: 'mystmd.org/guide' },
                             { icon: 'school', t: 'Jupyter Book', d: 'jupyterbook.org' }
                         ].map((item, i) => {

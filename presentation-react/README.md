@@ -130,6 +130,16 @@ High-impact banner usually placed at the bottom of a slide.
 -   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 -   **Icons**: [Material Icons](https://fonts.google.com/icons)
 
+## Styles & Customization
+
+The project utilizes a custom Tailwind configuration (`tailwind.config.js`) to enable dynamic theming:
+
+-   **Semantic colors**: Use abstract color names instead of fixed utilities to support runtime theme switching.
+    -   `bg-primary-700`: Main background tone (changes from Blue -> Purple -> Orange, etc.).
+    -   `text-accent-500`: Highlighting color.
+    -   `text-on-primary`: Dynamically calculated contrast color (white or black).
+-   **Dark mode**: Implemented via the `class` strategy. Use `dark:` variants (e.g., `dark:bg-slate-900`) to define styles for the dark theme. Usage of `bg-white dark:bg-slate-900` is the standard pattern for containers.
+
 ## Project Structure
 
 ```bash
