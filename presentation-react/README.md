@@ -16,6 +16,7 @@ A React-based, fully responsive presentation engine designed for academic and te
 - **Dark Mode Optimization**: Text shades automatically adjust (e.g., `primary-300` instead of `400`) to guarantee legibility against dark backgrounds.
 - **Keyboard Navigation**: Fully navigable via keyboard (Tab, Arrows, Enter), including the color palette and slide controls.
 - **Screen Readers**: Semantic HTML structure (`role="region"`, `aria-label`) for full JAWS/NVDA compatibility.
+- **Decorative Icons**: All decorative icons are marked with `aria-hidden="true"` to prevent visual noise for screen reader users.
 
 ### 🖥️ Modern "App Shell" Layout
 The presentation uses a robust CSS-driven architecture:
