@@ -1,21 +1,7 @@
-import { ReactNode } from 'react';
 
 
-interface SlideWrapperProps {
-    children: ReactNode;
-    isActive: boolean;
-}
 
-const SlideWrapper: React.FC<SlideWrapperProps> = ({ children, isActive }) => (
-    <div
-        role="region"
-        aria-roledescription="slide"
-        aria-hidden={!isActive}
-        className={`w-full min-h-screen lg:min-h-full bg-[#FEFEFE] dark:bg-slate-900 transition-all duration-300 ${isActive ? 'flex opacity-100' : 'hidden opacity-0'}`}
-    >
-        {children}
-    </div>
-);
+import SlideWrapper from './common/SlideWrapper';
 
 import Portada from './slides/Portada';
 import Sesion1 from './slides/Sesion1';

@@ -1,5 +1,6 @@
 import { KeyboardEvent } from 'react';
 import Slides from './components/Slides';
+import ProgressBar from './components/common/ProgressBar';
 import { useTheme } from './hooks/useTheme';
 import { useSlides } from './hooks/useSlides';
 
@@ -41,6 +42,7 @@ function App() {
 
     return (
         <div className="w-full h-screen bg-slate-200 dark:bg-slate-950 transition-colors duration-300 flex flex-col items-center overflow-hidden">
+            <ProgressBar currentSlide={currentSlide} totalSlides={slidesCount} />
             {/* Contenedor Principal */}
             <div className="w-full max-w-7xl h-full flex flex-col gap-5 p-5">
                 {/* Contenedor de Diapositivas con Scroll Interno */}

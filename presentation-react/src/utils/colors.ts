@@ -30,33 +30,7 @@ export function generatePalette(baseHex: string): Palette {
     };
 }
 
-// Calculate relative luminance for WCAG contrast
-function getLuminance(r: number, g: number, b: number): number {
-    const a = [r, g, b].map(v => {
-        v /= 255;
-        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
-    });
-    return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
-}
-
-export function getContrastColor(hexColor: string): string {
-    const r = parseInt(hexColor.slice(1, 3), 16);
-    const g = parseInt(hexColor.slice(3, 5), 16);
-    const b = parseInt(hexColor.slice(5, 7), 16);
-
-    const lum = getLuminance(r, g, b);
-
-    // WCAG recommends 4.5:1 for normal text.
-    // L_white = 1, L_black = 0.
-    // Contrast with white: (1 + 0.05) / (lum + 0.05)
-    // Contrast with black: (lum + 0.05) / (0 + 0.05)
-
-    const contrastWhite = 1.05 / (lum + 0.05);
-
-    // Prefer white text if contrast is sufficient (>4.0), otherwise black
-    // Lowered to 4.0 to handle edge cases like Green 700 where 4.49 flips to black
-    return (contrastWhite >= 4.0) ? '#ffffff' : '#0f172a';
-}
+import { getContrastColor } from '../hooks/useContrast';
 
 export function hexToRgb(hex: string): string {
     const r = parseInt(hex.slice(1, 3), 16);
@@ -85,6 +59,9 @@ export function applyTheme(primaryHex: string, accentHex: string): void {
 
     // Set Contrast Colors
     // We assume 700 exists in the palette (which it does)
-    root.style.setProperty('--color-on-primary', getContrastColor(primaryPalette[700]));
-    root.style.setProperty('--color-on-accent', getContrastColor(accentPalette[700]));
+    const onPrimary = getContrastColor(primaryPalette[700]);
+    root.style.setProperty('--color-on-primary', onPrimary === 'white' ? '#ffffff' : '#0f172a');
+
+    const onAccent = getContrastColor(accentPalette[700]);
+    root.style.setProperty('--color-on-accent', onAccent === 'white' ? '#ffffff' : '#0f172a');
 }

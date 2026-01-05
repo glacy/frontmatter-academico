@@ -230,3 +230,24 @@ const [primaryColor, setPrimaryColor] = useState<string>(() => localStorage.getI
 ```
 
 The application uses CSS variables and runtime palette generation to apply your choices globally without rebuilding.
+
+## AI usage declaration
+
+This presentation was developed with the assistance of artificial intelligence systems:
+
+-   **GLM (ChatGLM4)**: Assistance in content structuring, slide design, and UX/UI improvement suggestions.
+-   **Gemini**: Collaboration in JavaScript/CSS code generation, navigation system implementation, and accessibility optimization.
+
+### AI role
+
+-   Assistance in technical development (HTML, CSS, JavaScript)
+-   Suggestions for content structure and organization
+-   Code generation for reusable components
+-   Proposals for functionality and design improvements
+
+### Human responsibility
+
+-   Selection and validation of all content
+-   Critical editing and review of AI suggestions
+-   Final decision-making regarding structure and design
+-   Responsibility for the accuracy and quality of the final material
