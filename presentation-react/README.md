@@ -155,10 +155,12 @@ The project utilizes a custom Tailwind configuration (`tailwind.config.js`) to e
 
 ```bash
 src/
-├── App.tsx                 # App Shell: Main layout, navigation, and theme state
-├── main.tsx                # Entry point
+├── App.tsx                 # App Shell: Main layout and navigation
+├── main.tsx                # Entry point (Providers wrap App)
+├── context/
+│   └── ThemeContext.tsx    # Global state management for theming
 ├── hooks/
-│   ├── useTheme.ts         # Theme management logic (colors, dark mode)
+│   ├── useTheme.ts         # Hook to consume ThemeContext
 │   └── useSlides.ts        # Slide navigation logic
 ├── components/
 │   ├── Slides.tsx          # Registry: Main container that imports and renders slides
@@ -223,7 +225,7 @@ Deploy the `dist` folder to GitHub Pages, Vercel, or Netlify.
 ### 4. Customizing Colors
 **Interactive Mode**: Click the **Palette Icon** (<i className="material-icons">palette</i>) in the navigation bar to open the color menu. Select any preset to instantly update the theme.
 
-**Changing Defaults**: To modify the default colors used when the app first loads (before any user selection), edit `src/hooks/useTheme.ts` (or `App.tsx` if logic resides there):
+**Changing Defaults**: To modify the default colors used when the app first loads (before any user selection), edit `src/context/ThemeContext.tsx`:
 
 ```tsx
 const [primaryColor, setPrimaryColor] = useState<string>(() => localStorage.getItem('primaryColor') || '#your-default-hex');
