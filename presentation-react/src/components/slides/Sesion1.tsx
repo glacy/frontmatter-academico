@@ -19,7 +19,7 @@ const Sesion1 = () => (
                             "Identificar limitaciones de estructuración puramente visual"
                         ].map((item, i) => (
                             <div key={i} className="flex items-start gap-4">
-                                <i className="material-icons mt-1 text-accent-700 dark:text-accent-400">check_circle</i>
+                                <i className="material-icons mt-1 text-accent-700 dark:text-accent-400" aria-hidden="true">check_circle</i>
                                 <p className="text-lg lg:text-xl leading-relaxed">{item}</p>
                             </div>
                         ))}

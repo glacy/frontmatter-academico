@@ -27,7 +27,7 @@ const Sesion3 = () => (
                             ].map((item, i) => (
                                 <div key={i}>
                                     <div className="flex items-center gap-2 mb-2">
-                                        <i className="material-icons text-accent-700 dark:text-accent-400 text-[20px]">{item.icon}</i>
+                                        <i className="material-icons text-accent-700 dark:text-accent-400 text-[20px]" aria-hidden="true">{item.icon}</i>
                                         <h4 className="font-bold text-lg text-gray-800 dark:text-white">{item.title}</h4>
                                     </div>
                                     <p className="text-lg text-gray-700 dark:text-gray-200 leading-snug">{item.text}</p>

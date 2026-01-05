@@ -13,7 +13,7 @@ const Sesion4 = () => (
                     <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 lg:pl-4">
                         {['Definir una vez', 'Reutilizar', 'Especializar'].map((item, i) => (
                             <div key={i} className="flex items-center gap-2">
-                                <i className="material-icons text-accent-700 dark:text-accent-400 text-[20px]">radio_button_checked</i>
+                                <i className="material-icons text-accent-700 dark:text-accent-400 text-[20px]" aria-hidden="true">radio_button_checked</i>
                                 <p className="text-lg">{item}</p>
                             </div>
                         ))}

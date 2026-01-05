@@ -87,7 +87,7 @@ const IconCard: React.FC<IconCardProps> = ({ icon, title, children, variant = 'i
     return (
         <div className={`p-5 rounded-lg ${selectedStyle.container} ${className}`}>
             <div className="flex items-center gap-3 mb-3">
-                {icon && <i className={`material-icons text-3xl lg:text-4xl ${selectedStyle.icon}`}>{icon}</i>}
+                {icon && <i className={`material-icons text-3xl lg:text-4xl ${selectedStyle.icon}`} aria-hidden="true">{icon}</i>}
                 <h3 className={`title-font text-xl lg:text-2xl font-bold ${selectedStyle.title}`}>
                     {title}
                 </h3>

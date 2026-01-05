@@ -43,7 +43,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
                     title="Copy code"
                     aria-label="Copy code to clipboard"
                 >
-                    <i className="material-icons text-base">
+                    <i className="material-icons text-base" aria-hidden="true">
                         {copied ? 'check' : 'content_copy'}
                     </i>
                 </button>

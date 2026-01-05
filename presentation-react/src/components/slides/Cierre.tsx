@@ -20,7 +20,7 @@ const Cierre = () => (
                             'Proyectos reproducibles y semánticos'
                         ].map((item, i) => (
                             <div key={i} className="flex items-start gap-3">
-                                <i className="material-icons text-accent-700 dark:text-accent-400 text-[24px]">check_circle</i>
+                                <i className="material-icons text-accent-700 dark:text-accent-400 text-[24px]" aria-hidden="true">check_circle</i>
                                 <p>{item}</p>
                             </div>
                         ))}
@@ -41,7 +41,7 @@ const Cierre = () => (
                             const url = item.d.startsWith('http') ? item.d : `https://${item.d}`;
                             return (
                                 <div key={i} className="flex items-start gap-3">
-                                    <i className="material-icons text-accent-700 dark:text-accent-400 text-[24px]">{item.icon}</i>
+                                    <i className="material-icons text-accent-700 dark:text-accent-400 text-[24px]" aria-hidden="true">{item.icon}</i>
                                     <div>
                                         <p className="font-bold text-base lg:text-lg text-gray-800 dark:text-white">{item.t}</p>
                                         <a

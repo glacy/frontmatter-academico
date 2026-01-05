@@ -61,7 +61,7 @@ license: CC-BY-4.0
 ---`}
                     </CodeBlock>
                     <div className="mt-6 flex items-start gap-2">
-                        <i className="material-icons text-primary-600 dark:text-primary-300 text-[20px]">label</i>
+                        <i className="material-icons text-primary-600 dark:text-primary-300 text-[20px]" aria-hidden="true">label</i>
                         <p className="text-base lg:text-lg text-gray-700 dark:text-gray-200"><strong className="text-accent-700 dark:text-accent-400">Palabras clave (keywords):</strong> permiten indexación temática y búsqueda eficiente</p>
                     </div>
                 </IconCard>

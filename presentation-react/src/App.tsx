@@ -63,7 +63,7 @@ function App() {
                 ${currentSlide === 0 ? 'opacity-0 pointer-events-none' : 'bg-primary-700 hover:scale-105 dark:bg-primary-600'}`}
                             >
                                 <div className="flex items-center gap-2" aria-hidden="true">
-                                    <i className="material-icons">arrow_back</i>
+                                    <i className="material-icons" aria-hidden="true">arrow_back</i>
                                     <span className="hidden lg:inline">Anterior</span>
                                 </div>
                             </button>
@@ -84,7 +84,7 @@ function App() {
                                         aria-label="Abrir paleta de colores"
                                         aria-expanded={showPalette}
                                     >
-                                        <i className="material-icons text-xl sm:text-2xl">palette</i>
+                                        <i className="material-icons text-xl sm:text-2xl" aria-hidden="true">palette</i>
                                     </button>
 
                                     {showPalette && (
@@ -139,7 +139,7 @@ function App() {
                             >
                                 <div className="flex items-center gap-2" aria-hidden="true">
                                     <span className="hidden lg:inline">Siguiente</span>
-                                    <i className="material-icons">arrow_forward</i>
+                                    <i className="material-icons" aria-hidden="true">arrow_forward</i>
                                 </div>
                             </button>
                         </div>

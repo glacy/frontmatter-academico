@@ -7,7 +7,7 @@ const Portada = () => (
         </div>
         <div className="relative z-10 text-center px-6 lg:px-20 flex flex-col items-center justify-center flex-grow">
             <div className="mb-6 lg:mb-8">
-                <i className="material-icons text-white text-6xl lg:text-[72px] opacity-90">description</i>
+                <i className="material-icons text-white text-6xl lg:text-[72px] opacity-90" aria-hidden="true">description</i>
             </div>
             <h1 className="title-font text-4xl lg:text-7xl font-bold text-white leading-tight mb-8 lg:mb-10 max-w-5xl tracking-tight">
                 Diseño semántico de documentos académicos
@@ -25,12 +25,12 @@ const Portada = () => (
         </div>
         <div className="relative lg:absolute lg:bottom-10 left-0 right-0 flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-16 text-primary-200 mt-10 lg:mt-0 pb-10 lg:pb-0 z-10">
             <div className="flex items-center gap-2">
-                <i className="material-icons text-2xl">schedule</i>
+                <i className="material-icons text-2xl" aria-hidden="true">schedule</i>
                 <span className="text-lg font-light">6 sesiones • 9 horas</span>
             </div>
             <div className="hidden lg:block w-1 h-8 bg-primary-300/30"></div>
             <div className="flex items-center gap-2">
-                <i className="material-icons text-2xl">code</i>
+                <i className="material-icons text-2xl" aria-hidden="true">code</i>
                 <span className="text-lg font-light">YAML • MyST • Jupyter Book</span>
             </div>
         </div>
