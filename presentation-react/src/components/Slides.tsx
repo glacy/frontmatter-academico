@@ -36,7 +36,7 @@ const Slides: React.FC<SlidesProps> = ({ currentSlide }) => {
     ];
 
     return (
-        <div className="w-full min-h-screen lg:min-h-full relative bg-white dark:bg-slate-900 transition-colors duration-300">
+        <div className="w-full h-full relative bg-white dark:bg-slate-900 transition-colors duration-300">
             {slides.map((slide, index) => (
                 <SlideWrapper key={index} isActive={currentSlide === index}>
                     {slide}
